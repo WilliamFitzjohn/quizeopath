@@ -15,4 +15,4 @@ RUN unzip /tmp/pb.zip -d /pb/ && \
     rm /tmp/pb.zip
 
 # start PocketBase
-CMD ["/pb/pocketbase", "serve", "--http=0.0.0.0:8050"]
+CMD ["/pb/pocketbase", "serve", "--http=0.0.0.0:8051"]

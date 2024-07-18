@@ -3,7 +3,7 @@ services:
   pocketbase:
     build: ./quizeopath-backend
     ports:
-      - "8050:80"
+      - "8051:8051"
     restart: always
     environment:
       - BASE_URL=/api
