@@ -7,8 +7,10 @@ services:
     restart: always
     environment:
       - BASE_URL=/api
-    # healthcheck:
-    #   test: curl --fail http://localhost/api/ping || exit 1
-    #   interval: 30s
-    #   retries: 5
-    #   timeout: 10s
+    volumes:
+      - "/etc/quizeopath/pb_data:/pb/pb_data"
+    healthcheck:
+      test: curl --fail http://localhost:8051/api/health || exit 1
+      interval: 60s
+      retries: 5
+      timeout: 20s

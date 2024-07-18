@@ -6,8 +6,7 @@ ARG PB_VERSION=0.22.17
 # install dependencies
 RUN apk add --no-cache \
     unzip \
-    ca-certificates \
-    build-base
+    ca-certificates
 
 # download and unzip PocketBase
 ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_amd64.zip /tmp/pb.zip
