@@ -3,16 +3,23 @@
     import { Router, Route, Link } from 'svelte-routing';
     // import Home from './routes/Home.svelte';
     // import About from './routes/About.svelte';
+    import Navbar from '../lib/nav/Navbar.svelte';
+    import Quizzes from '../routes/Quizzes.svelte';
     import Quiz from '../routes/Quiz.svelte';
+    import QuizCreator from '../routes/QuizCreator.svelte';
+    import Login from '../lib/Login.svelte';
 </script>
 
 <Router>
-    <nav>
-        <Link to="/home">Home</Link>
-        <Link to="/about">About</Link>
-    </nav>
+    <Navbar/>
     <!-- <Route path="home" component={Home} />
     <Route path="about" component={About} /> -->
+    <Route path="login" component={Login} />
+    <Route path="quiz/" component={Quizzes} />
+    <Route path="quiz/create/" component={QuizCreator} />
+    <Route path="quiz/create/:quiz_id" let:params>
+        <QuizCreator id={params.quiz_id} />
+    </Route>
     <Route path="quiz/:quiz_id" let:params>
         <Quiz id={params.quiz_id} />
     </Route>

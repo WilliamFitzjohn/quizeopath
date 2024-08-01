@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: rgb(28, 28, 28);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,10 +18,49 @@
   margin: 0 auto;
 }
 
+body {
+  margin: 0;
+  .main-body{
+    margin: 0 5rem;
+    min-height: 70vh;
+  }
+  .quiz-card{
+    transition: 0.075s;
+
+  }
+  .quiz-card:hover{
+    background-color: whitesmoke;
+    cursor: pointer;
+  }
+}
+
+.header-container{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  .primary-button{
+    transition: 0.15s;
+    display: block;
+    padding:1rem;
+    height: fit-content;
+    background-color: lightcyan;  
+  }
+  .primary-button:hover{
+    cursor:pointer;
+    background-color:rgb(144, 255, 255);
+  }
+}
+.shadow-card{
+  border: solid 1px grey;
+  border-radius: 2px;
+  box-shadow: 0 0 5px lightgrey;
+  padding: 1rem;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: rgb(28, 28, 28);
     background-color: #ffffff;
   }
   button {
