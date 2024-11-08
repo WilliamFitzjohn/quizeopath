@@ -1,0 +1,18 @@
+.q-correct{
+    background-color: green;
+}
+
+.q-incorrect{
+    background-color: orange;
+}
+
+.q-missed{
+    background-color: red;
+    color: white;
+}
+
+.q-answer{
+    border: 1px solid grey;
+    border-radius: 1px;
+    padding: 5px;
+}

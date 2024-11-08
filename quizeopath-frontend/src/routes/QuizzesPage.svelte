@@ -1,5 +1,5 @@
 <script>
-  import { pb } from '../lib/pocketbase';
+  import { pb, user } from '../lib/pocketbase';
   import { onMount } from 'svelte';
 
   let quizzes = []
@@ -9,6 +9,7 @@
   }
 
   onMount(async() => {
+    console.log($user)
     quizzes = await fetchQuizzes()
     console.log(quizzes)
   })
@@ -28,7 +29,7 @@
       <div>
         {quiz.name}
       </div>
-{#if true}
+{#if $user && quiz.author == $user.id}
       <a href="/quiz/create/{quiz.id}">
         edit
       </a>

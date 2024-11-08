@@ -1,13 +1,13 @@
 
 <script>
     import { Router, Route, Link } from 'svelte-routing';
-    // import Home from './routes/Home.svelte';
-    // import About from './routes/About.svelte';
-    import Navbar from '../lib/nav/Navbar.svelte';
-    import Quizzes from '../routes/Quizzes.svelte';
-    import Quiz from '../routes/Quiz.svelte';
-    import QuizCreator from '../routes/QuizCreator.svelte';
-    import Login from '../lib/Login.svelte';
+    // import Home from @routes/Home.svelte';
+    // import About from @routes/About.svelte';
+    import Navbar from '@lib/nav/Navbar.svelte';
+    import Quizzes from '@routes/QuizzesPage.svelte';
+    import Quiz from '@routes/QuizPage.svelte';
+    import QuizCreator from '@routes/QuizCreatorPage.svelte';
+    import Login from '@lib/Login.svelte';
 </script>
 
 <Router>
