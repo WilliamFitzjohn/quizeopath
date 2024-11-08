@@ -2,6 +2,7 @@ FROM alpine:latest
 WORKDIR /pb
 # Variables
 ARG PB_VERSION=0.22.17
+ARG ARCH=arm64
 
 # install dependencies
 RUN apk add --no-cache \
@@ -10,7 +11,7 @@ RUN apk add --no-cache \
     curl
 
 # download and unzip PocketBase
-ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_amd64.zip /tmp/pb.zip
+ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_${ARCH}.zip /tmp/pb.zip
 RUN unzip /tmp/pb.zip -d /pb/ && \
     rm /tmp/pb.zip
 

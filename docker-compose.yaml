@@ -1,6 +1,9 @@
 services:
   pocketbase:
-    build: ./quizeopath-backend
+    build:
+      context: ./quizeopath-backend
+      args:
+        ARCH: arm64
     ports:
       - "8051:8051"
     restart: always
