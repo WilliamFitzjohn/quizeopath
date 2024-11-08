@@ -16,3 +16,11 @@ services:
       interval: 60s
       retries: 5
       timeout: 20s
+
+  frontend:
+    build:
+      context: ./quizeopath-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8054:80"
+    restart: always
