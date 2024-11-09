@@ -11,7 +11,8 @@
   
   async function createQuiz() {
     try {
-      const createdQuiz = await pb.collection('quizzes').create(quiz);
+      const { id: emptyId, updated, ...quizWithoutIdAndUpdated } = quiz;
+      const createdQuiz = await pb.collection('quizzes').create(quizWithoutIdAndUpdated);
       console.log('Created quiz:', createdQuiz);
       id = createdQuiz.id
       quiz = await fetchQuiz()
