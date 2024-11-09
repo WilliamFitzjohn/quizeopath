@@ -11,7 +11,13 @@
   
   async function createQuiz() {
     try {
-      const { id: emptyId, updated, ...quizWithoutIdAndUpdated } = quiz;
+      quiz.author = user.id;
+      const { 
+        updated: emptyUpdated,
+        collectionId: emptyCollectionId,
+        collectionName: emptyCollectionName,
+        ...quizWithoutIdAndUpdated 
+      } = quiz;
       const createdQuiz = await pb.collection('quizzes').create(quizWithoutIdAndUpdated);
       console.log('Created quiz:', createdQuiz);
       id = createdQuiz.id
