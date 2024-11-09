@@ -2,7 +2,8 @@ import PocketBase from 'pocketbase';
 
 import { writable } from 'svelte/store';
 
-export const pb = new PocketBase('http://192.168.10.101:8051');
+const baseUrl = process.env.BACKEND_URL || 'https://quizeopath.fitzjohn.dev';
+export const pb = new PocketBase(baseUrl);
 
 export const user = writable(pb.authStore.model);
 
