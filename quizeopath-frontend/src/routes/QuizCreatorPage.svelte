@@ -11,13 +11,14 @@
   
   async function createQuiz() {
     try {
+      quiz.author = $user?.id || '';
       const { 
         updated: emptyUpdated,
         collectionId: emptyCollectionId,
         collectionName: emptyCollectionName,
         ...quizWithoutIdAndUpdated 
       } = quiz;
-      quiz.author = $user?.id || '';
+      console.log
       const createdQuiz = await pb.collection('quizzes').create(quizWithoutIdAndUpdated);
       console.log('Created quiz:', createdQuiz);
       id = createdQuiz.id
