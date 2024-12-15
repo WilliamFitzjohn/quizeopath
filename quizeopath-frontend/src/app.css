@@ -22,6 +22,9 @@ body {
   margin: 0;
   .main-body{
     margin: 0 5rem;
+    @media screen and (max-width: 600px) {
+      margin: 0 1rem;
+    }
     min-height: 70vh;
   }
   .quiz-card{

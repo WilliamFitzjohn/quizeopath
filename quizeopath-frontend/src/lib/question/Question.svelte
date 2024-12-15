@@ -32,7 +32,7 @@
   }
 </script>
 <div>
-  <div class="shadow-card question-card">
+  <div class="shadow-card mb-1">
     {#if editMode}
     <input 
       type="text" 

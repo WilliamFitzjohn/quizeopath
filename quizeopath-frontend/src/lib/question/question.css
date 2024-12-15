@@ -1,18 +1,26 @@
 .q-correct{
-    background-color: green;
+    background-color: lightgreen;
 }
 
 .q-incorrect{
-    background-color: orange;
+    background-color: lightgoldenrodyellow;
 }
 
 .q-missed{
-    background-color: red;
-    color: white;
+    background-color: lightpink;
 }
 
 .q-answer{
     border: 1px solid grey;
     border-radius: 1px;
     padding: 5px;
+    margin-bottom: 0.2rem;
+}
+
+.mb-1{
+    margin-bottom: 1rem;
+}
+
+.mb-05{
+    margin-bottom: 0.5rem;
 }

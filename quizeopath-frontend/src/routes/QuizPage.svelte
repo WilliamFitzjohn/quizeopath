@@ -86,7 +86,7 @@
   {#if quiz.data && quiz.name}
     <h1>{quiz.name}</h1>
     <form>
-      <div class="shadow-card">
+      <div>
         {#if quiz.one_question_mode}
           <h3>Question {questionIndex + 1} of {quiz.data.questions.length}</h3>
         {/if}
