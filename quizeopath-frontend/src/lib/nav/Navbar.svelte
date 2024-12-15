@@ -1,6 +1,12 @@
 <script>
     import { Link } from 'svelte-routing';
-    import { user } from '../pocketbase';
+    import { pb, user } from '../pocketbase';
+
+    function logout() {
+        pb.authStore.clear();
+        user.set(null);
+        window.location.href = '/login';
+    }
 </script>
 
 <nav class="navbar mb-2 navbar-expand-lg navbar-dark bg-dark">
@@ -23,10 +29,10 @@
         <ul class="navbar-nav">
             {#if $user}
                 <li class="nav-item">
-                    <span class="navbar-text">{$user.username}</span>
                 </li>
-                <li class="nav-item">
-                    <Link class="nav-link" to="/login">Log out</Link>
+                <li class="nav-item d-flex">
+                    <button class="nav-link btn btn-link mr-2" on:click={logout}>Log out</button>
+                    <span class="navbar-text">{$user.username}</span>
                 </li>
             {:else}
                 <li class="nav-item">
